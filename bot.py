@@ -221,4 +221,4 @@ def get_random_fact(file="facts.txt"):
 #
 #
 
-bot.run(dotenv.get_key("\.env", "TOKEN"))
+bot.run(dotenv.get_key(".env", "TOKEN"))
