@@ -14,43 +14,6 @@ client = discord.Client()
 
 allowed_roles = ["MODERATOR", "OWNER"]
 
-
-# @client.event
-# async def on_ready():
-#     print(f'{client.user} has connected to Discord!')
-#
-#
-# @client.event
-# async def on_message(message):
-#     # Called whenever a message is sent
-#     if message.author == client.user:
-#         return
-#
-#     if message.content.startswith("!ban"):
-#         pass
-
-# class Welcomer(cmd.Cog):
-#     def __init__(self, bot):
-#         self.bot = bot
-#         self._last_member = None
-#
-#     @cmd.Cog.listener()
-#     async def on_member_join(self, member):
-#         channel = member.guild.system_channel
-#         if channel is not None:
-#             await channel.send(f'A wild {member.mention} has appeared')
-#
-#     @cmd.command()
-#     async def hello(self, ctx, *, member: discord.Member = None):
-#         """Says hello"""
-#         member = member or ctx.author
-#         if self._last_member is None or self._last_member.id != member.id:
-#             await ctx.send('Hello {0.name}~'.format(member))
-#         else:
-#             await ctx.send('Hello {0.name}... This feels familiar.'.format(member))
-#         self._last_member = member
-
-
 @bot.command()
 async def ban(ctx, member: discord.Member, reason=None):
     if ctx.message.author.top_role.name not in allowed_roles:
