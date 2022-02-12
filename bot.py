@@ -3,16 +3,12 @@ import asyncio
 import os
 
 import discord
-import dotenv
 from discord.ext import commands as cmd
 from dotenv import load_dotenv
 import random
 import youtube_dl
 
 bot = cmd.Bot(command_prefix='!')
-
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = discord.Client()
 
@@ -221,4 +217,6 @@ def get_random_fact(file="facts.txt"):
 #
 #
 
-bot.run(dotenv.get_key(".env", "TOKEN"))
+load_dotenv()
+
+bot.run(os.getenv("TOKEN"))
